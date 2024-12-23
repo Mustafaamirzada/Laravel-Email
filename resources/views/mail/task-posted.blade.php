@@ -37,10 +37,10 @@
                       <div class="col-lg-3 col-md-4 label">Created Date</div>
                       <div class="col-lg-9 col-md-8">{{$data->created_at->diffForHumans()}}</div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                       <div class="col-lg-3 col-md-4 label">Last Update</div>
                       <div class="col-lg-9 col-md-8">{{$data->end_at->diffForHumans()}}</div>
-                    </div>
+                    </div> --}}
                 </div>
               </div>
             </div>
