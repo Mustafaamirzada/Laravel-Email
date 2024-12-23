@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Tasks;
+use App\Mail\TaskPosted;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -37,8 +38,13 @@ class TasksController extends Controller
             'end_at' => $request->end
         ];
 
-        Mail::to('mustafa.amirzada.afg@gmail.com')->send(new Tasks($data));
-        
+        Mail::to('mustafa.amirzada.afg@gmail.com')->queue(
+            new TaskPosted($data)
+        );
+
+        Mail::to('mustafa.amirzada.afg@gmail.com')
+        ->later(now()->addMinutes(1), new TaskPosted($data));
+
         $task = new Task;
         $task->user_id = $request->user_id;
         $task->taskname = $request->name;
@@ -48,7 +54,7 @@ class TasksController extends Controller
         $task->end_at = $request->end;
         $task->save();
 
-        return redirect()->route('mail');
+        return redirect()->back();
     }
 
 

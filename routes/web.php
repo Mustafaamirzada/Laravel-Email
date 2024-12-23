@@ -23,4 +23,6 @@ Route::put('tasks/{task}/toggle-complete', function (Task $task) {
     return redirect()->back()->with('success', 'Task updated successfully!');
 })->name('tasks.toggle-complete');
 
-Route::get('/mail', [MailController::class, 'send'])->name('mail');
+
+
+Route::get('mail', [MailController::class, 'send'])->name('mail');
