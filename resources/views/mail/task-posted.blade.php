@@ -10,7 +10,6 @@
 
 </head>
 <body>
-
     <section class="section profile">
         <div class="row d-flex flex-column align-items-center">
           <div class="col-xl-10">
