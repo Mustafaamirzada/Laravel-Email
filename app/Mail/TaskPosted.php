@@ -23,7 +23,7 @@ class TaskPosted extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Job Posted',
+            subject: 'Task Posted',
         );
     }
 
@@ -31,7 +31,7 @@ class TaskPosted extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.job-posted',
+            view: 'mail.task-posted',
         );
     }
 
