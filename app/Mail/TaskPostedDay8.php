@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class Tasks extends Mailable implements ShouldQueue
+class TaskPostedDay8 extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -28,7 +28,7 @@ class Tasks extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Tasks',
+            subject: 'Tasks Posted',
         );
     }
 
@@ -38,7 +38,7 @@ class Tasks extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            view: 'mail.taskNotifications',
+            view: 'mail.task-posted-day-8',
         );
     }
 

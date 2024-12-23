@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TaskPostedDay8;
 use App\Mail\Tasks;
 use App\Mail\TaskPosted;
 use App\Models\Task;
@@ -43,7 +44,7 @@ class TasksController extends Controller
         );
 
         Mail::to('mustafa.amirzada.afg@gmail.com')
-        ->later(now()->addMinutes(1), new TaskPosted($data));
+        ->later(now()->addMinutes(1), new TaskPostedDay8($data));
 
         $task = new Task;
         $task->user_id = $request->user_id;

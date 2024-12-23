@@ -13,9 +13,7 @@ Route::resource('/', ViewAllTask::class)
 Route::resource('user', UsersController::class);
 Route::resource('tasks', TasksController::class);
 
-Route::get('/contact', function () {
-    return view('userNotification.contact');
-})->name('contact');
+Route::view('/contact', ('userNotification.contact'))->name('contact');
 
 Route::put('tasks/{task}/toggle-complete', function (Task $task) {
     $task->toggleComplete();
@@ -25,4 +23,4 @@ Route::put('tasks/{task}/toggle-complete', function (Task $task) {
 
 
 
-Route::get('mail', [MailController::class, 'send'])->name('mail');
+// Route::get('mail', [MailController::class, 'send'])->name('mail');
