@@ -23,18 +23,13 @@
                     </div>
     
                     <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Email</div>
-                      <div class="col-lg-9 col-md-8">{{$data['email']}}</div>
-                    </div>
-    
-                    <div class="row">
                       <div class="col-lg-3 col-md-4 label">Description</div>
                       <div class="col-lg-9 col-md-8">{{$data['description']}}</div>
                     </div>
     
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label">Created Date</div>
-                      <div class="col-lg-9 col-md-8">{{$data->created_at->diffForHumans()}}</div>
+                      <div class="col-lg-9 col-md-8">{{$data['start_at']}}</div>
                     </div>
                 </div>
               </div>
